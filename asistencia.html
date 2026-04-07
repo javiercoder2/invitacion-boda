@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestro Matrimonio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<style>
+.regalos {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.btn-regalo {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 15px 30px;
+  background: #d4af37;
+  color: black;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-regalo:hover {
+  transform: scale(1.08);
+  background: #e6c75a;
+}
+
+.codigo {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.menu-block {
+  margin-top: 60px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.menu-grid div {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.menu-grid div:hover {
+  transform: scale(1.03);
+}
+
+.menu-grid h4 {
+  color: #d4af37;
+}
+.whatsapp-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.logo-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+  margin-bottom: 20px;
+}
+
+.logo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-container {
+  animation: fadeZoom 1.5s ease;
+}
+
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.card span {
+  display: block;
+  color: #d4af37;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card h4 {
+  margin: 10px 0 5px;
+}
+.menu-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.menu-container h3 {
+  color: #d4af37;
+  margin-top: 40px;
+}
+
+.menu-container h4 {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.menu-container ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.menu-container li {
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #0d0d0d;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+
+.mensaje-boda {
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+  max-width: 600px;
+  color: white;
+  opacity: 0.9;
+
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.hero {
+  min-height: 220vh; /* 👈 MÁS ESPACIO */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('5.JPEG');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color: #d4af37;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+/* CONTADOR */
+.countdown {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s;
+}
+
+.time-box:hover {
+  transform: scale(1.1);
+}
+
+.time-box span {
+  font-size: 40px;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.time-box p {
+  margin: 0;
+}
+
+/* GALERIA */
+.gallery {
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.gallery img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* SECCIONES */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+}
+
+
+.formulario {
+  max-width: 500px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-size: 14px;
+  backdrop-filter: blur(5px);
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.formulario button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #d4af37;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  transform: scale(1.05);
+  background: #e6c75a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="fade-transition active" id="fade"></div>
+<!-- HERO -->
+<div class="hero">
+      <h1>HA DICHO QUE SÍ!</h1>
+<div class="logo-container">
+  <video autoplay muted loop playsinline class="logo-video">
+    <source src="logo.mp4" type="video/mp4">
+  </video>
+</div>
+  <p>26 de Septiembre · 18:00 hrs</p>
+
+  <!-- CONTADOR -->
+  <div class="countdown">
+    <div class="time-box"><span id="days">0</span><p>Días</p></div>
+    <div class="time-box"><span id="hours">0</span><p>Horas</p></div>
+    <div class="time-box"><span id="minutes">0</span><p>Min</p></div>
+    <div class="time-box"><span id="seconds">0</span><p>Seg</p></div>
+  </div>
+
+  <p class="mensaje-boda">
+  Te esperamos<br>
+  Será un día inolvidable y queremos compartirlo contigo 💍
+</p>
+</div>
+
+<!-- GALERIA -->
+<div class="gallery">
+  <img src="1.JPEG">
+  <img src="2.JPEG">
+  <img src="3.JPEG">
+  <img src="4.JPEG">
+  <img src="5.JPEG">
+  <img src="6.JPEG">
+  <img src="7.JPEG">
+</div>
+<div class="section">
+  <h2>Nuestra Historia</h2>
+  <p>
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar 
+    todo lo que vendría después. Con el tiempo, construimos una historia llena 
+    de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso 
+    y celebrarlo junto a ustedes Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes 💖
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    
+  </p>
+</div>
+<!-- SECCION -->
+<div class="section">
+  <h2>Menú</h2>
+
+  <!-- 🍸 CÓCTEL -->
+  <div class="menu-block">
+    <h3>🍸 Cóctel</h3>
+
+    <div class="menu-grid">
+
+      <div>
+        <h4>Bebidas</h4>
+        <ul>
+          <li>Pisco Sour</li>
+          <li>Mango Sour</li>
+          <li>Espumante (Brut, Demi Sec, Moscato)</li>
+          <li>Aperol Spritz</li>
+          <li>Gin Tonic</li>
+          <li>Jugos Minuto Verde / Guallarauco</li>
+          <li>Bebidas Light y Normal</li>
+          <li>Agua mineral con y sin gas</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Bocados</h4>
+        <ul>
+          <li>Bruschetta (jamón serrano, Philadelphia, camarón, palmitos)</li>
+          <li>Brocheta de vacuno grillado</li>
+          <li>Brocheta de ave con maracuyá</li>
+          <li>Cucharita de ceviche</li>
+          <li>Empanaditas (carne, espinaca, camarón, champiñón, queso)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🥗 GUARNICIONES -->
+  <div class="menu-block">
+    <h3>🥗 Guarniciones (todas en evaluación)</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Brocheta Mediterránea (queso de cabra y tomate cherry)</li>
+          <li>Camarones crocantes</li>
+          <li>Mini taquito mexicano</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍽 ENTRADAS -->
+  <div class="menu-block">
+    <h3>🍽 Platos de Entrada (en evaluación)</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Trilogía de causas peruanas (pollo, camarón, salmón)</li>
+          <li>Ceviche mixto del Pacífico</li>
+          <li>Timbal de pollo y palta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍖 PRINCIPALES -->
+  <div class="menu-block">
+    <h3>🍖 Platos Principales (en evaluación)</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Filete mignon en salsa de vino tinto</li>
+          <li>Lomo salteado</li>
+          <li>Pavo a la naranja</li>
+          <li>Salmón en costra de hierbas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍚 ACOMPAÑAMIENTOS -->
+  <div class="menu-block">
+    <h3>🍚 Acompañamientos</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Pastelera de choclo con albahaca</li>
+          <li>Verduras salteadas al wok</li>
+          <li>Papas rústicas</li>
+          <li>Papa gratinada</li>
+          <li>Puré rústico</li>
+          <li>Arroz árabe</li>
+          <li>Mix de hojas verdes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍰 POSTRES -->
+  <div class="menu-block">
+    <h3>🍰 Buffet de Postres</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Tiramisú</li>
+          <li>Shots de 4 leches</li>
+          <li>Pie de limón brûlée</li>
+          <li>Mousse de chocolate</li>
+          <li>Mousse de frambuesa</li>
+          <li>Passion fruit</li>
+          <li>Cookies & Cream</li>
+          <li>Cheesecake frutos del bosque</li>
+          <li>Frutas de estación</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍾 FIESTA -->
+  <div class="menu-block">
+    <h3>🍾 Fiesta & Barra Libre</h3>
+
+    <div class="menu-grid">
+
+      <div>
+        <h4>Bebidas</h4>
+        <ul>
+          <li>Coca-Cola, Fanta, Sprite</li>
+          <li>Jugos Del Valle</li>
+          <li>Agua mineral Vital / Cachantún</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Destilados</h4>
+        <ul>
+          <li>Pisco Mistral</li>
+          <li>Ron Havana Club</li>
+          <li>Vodka Absolut</li>
+          <li>Whisky Jack Daniel's</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Mixología</h4>
+        <ul>
+          <li>Daiquirí frambuesa y menta</li>
+          <li>Mojito cubano</li>
+          <li>Piña colada</li>
+          <li>Ramazzotti Spritz</li>
+          <li>Tequila Margarita</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Extras</h4>
+        <ul>
+          <li>100 cervezas (Corona / Heineken)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🌙 ESTACIÓN NOCTURNA -->
+  <div class="menu-block">
+    <h3>🌙 Estación Nocturna</h3>
+
+    <div class="menu-grid">
+      <div>
+        <ul>
+          <li>Infusiones & café</li>
+          <li>Mini churrascos</li>
+          <li>Consomé</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2>Lo que viviremos juntos</h2>
+  <p>
+    Hemos preparado una celebración llena de momentos especiales ✨  
+    Habrá sorpresas, juegos, música y mucha alegría.  
+    Queremos que disfrutes cada instante con nosotros 💃🕺
+  </p>
+</div>
+<div class="section">
+  <h2>Programa del Evento</h2>
+
+  <div class="program-grid">
+
+    <div class="card"><span>18:00</span><h4>Recepción</h4><p>Gran Parrón</p></div>
+
+    <div class="card"><span>18:30</span><h4>Ceremonia</h4><p>Ingreso novios · Alfombra roja</p></div>
+
+    <div class="card"><span>19:00</span><h4>Cóctel & Brindis</h4><p>Aire libre</p></div>
+
+    <div class="card"><span>19:45</span><h4>Fotografías</h4></div>
+
+    <div class="card"><span>20:00</span><h4>Cena</h4><p>Piscina iluminada</p></div>
+
+    <div class="card"><span>21:30</span><h4>Corte de torta</h4></div>
+
+    <div class="card"><span>22:00</span><h4>Fiesta & Bar</h4></div>
+
+    <div class="card"><span>00:00</span><h4>Estación nocturna</h4></div>
+
+    <div class="card"><span>02:00</span><h4>Fin del evento</h4></div>
+
+  </div>
+</div>
+</div>
+
+
+
+<div class="section regalos">
+  <h2>🎁 Regalos</h2>
+
+  <p>
+    <strong>Hemos preparado una lista especial para ustedes</strong>
+  </p>
+
+  <a href="https://www.noviosparis.cl/search-couple" target="_blank" class="btn-regalo">
+    🎁 Ver lista de regalos
+  </a>
+
+  <p class="codigo">
+    Código de novios: <strong>17794620</strong>
+  </p>
+
+  <p>
+    También puedes realizar tu compra de manera presencial en tiendas Paris,
+    mencionando nuestro código.
+  </p>
+
+  <p>
+    En <strong>Paris Plaza Oeste</strong>, Enie Franco podrá ayudarte con una atención personalizada en sección Novios,
+    o bien en cualquier otra tienda Paris indicando el código.
+  </p>
+</div>
+
+
+
+
+
+<script>
+// 🎵 AUDIO (100% funcional)
+function activarAudio() {
+  const music = document.getElementById("music");
+  music.play();
+}
+
+// ⏳ CONTADOR PRO
+const weddingDate = new Date("Sep 26, 2026 18:00:00").getTime();
+
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+
+  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+}, 1000);
+
+// ✨ ANIMACIÓN SCROLL
+const images = document.querySelectorAll(".gallery img");
+
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.9;
+
+  images.forEach(img => {
+    const top = img.getBoundingClientRect().top;
+    if (top < trigger) {
+      img.classList.add("show");
+    }
+  });
+});
+
+const form = document.querySelector(".formulario");
+
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.9;
+  const top = form.getBoundingClientRect().top;
+
+  if (top < trigger) {
+    form.style.opacity = 1;
+    form.style.transform = "translateY(0)";
+  }
+});
+</script>
+
+<div class="section">
+  <h2>Confirmar Asistencia</h2>
+  <p>Por favor confirma tu asistencia a nuestro gran día 💍</p>
+
+  <form action="https://formspree.io/f/xlgozgqe" method="POST" class="formulario">
+
+    <input type="text" name="Nombre" placeholder="Tu nombre" required>
+
+    <input type="number" name="Acompañantes" placeholder="Cantidad de acompañantes">
+
+    <textarea name="Mensaje" placeholder="Déjanos un mensaje o buenos deseos 💌"></textarea>
+
+    <button type="submit">Confirmar asistencia</button>
+
+  </form>
+</div>
+
+<a href="https://wa.me/56988209644"
+   target="_blank"
+   class="whatsapp-btn">
+   💬 Contáctanos por WhatsApp para recibir la ubicación del lugar
+</a>
+</body>
+</html>

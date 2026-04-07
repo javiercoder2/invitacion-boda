@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Javier & Yaritza</title>
+
+<style>
+
+  .logo-container {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #d4af37;
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+}
+
+.logo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto {
+  font-size: 28px;
+  margin-top: 10px;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial;
+}
+.fade-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 9999;
+}
+.fade-transition.active {
+  opacity: 1;
+}
+.bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d4af37;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 0 0 20px black;
+  z-index: 2;
+}
+</style>
+</head>
+
+<body>
+
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="videoplayback.mp4" type="video/mp4">
+</video>
+
+<div class="overlay-text" onclick="entrar()">
+
+  <div class="logo-container">
+    <video autoplay muted loop playsinline class="logo-video">
+      <source src="logo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="texto">
+    Ingresa a nuestro Matrimonio 💍
+  </div>
+
+</div>
+
+<script>
+function entrar() {
+  window.location.href = "asistencia.html";
+}
+</script>
+
+
+<script>
+document.getElementById("btnEntrar").addEventListener("click", function () {
+  const music = document.getElementById("music");
+
+  // 🔊 activar audio correctamente
+  music.muted = false;
+  music.volume = 1;
+
+  music.play().then(() => {
+    console.log("Audio OK");
+
+    // ⏱ pequeño delay para asegurar reproducción
+    setTimeout(() => {
+      window.location.href = "./asistencia.html";
+    }, 300);
+
+  }).catch((err) => {
+    console.log("Error audio:", err);
+
+    // igual redirige
+    window.location.href = "./asistencia.html";
+  });
+});
+</script>
+
+</body>
+</html>
