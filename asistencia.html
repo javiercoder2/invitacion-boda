@@ -8,10 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 .section-fondo {
-  background-image: url("17.jpeg");
+  background-image: url("3.jpeg");
   background-size: cover;        /* 👈 cubre todo */
   background-position: center;   /* 👈 centra */
   background-repeat: no-repeat;
+  font-weight: bold;
 
   width: 100%;
   min-height: 500px;             /* 👈 altura base */
@@ -25,6 +26,8 @@
 }
 
 .section-fondo::before {
+      font-weight: bold;
+
   content: "";
   position: absolute;
   top: 0;
@@ -462,10 +465,15 @@ body {
   
 }
 
+.section p {
+    font-size: 25px;
+
+}
+
 h2 {
   font-family: 'Great Vibes', cursive;
   color: #d4af37;
-    font-size: 35px;
+    font-size: 55px;
 
 }
 
@@ -559,11 +567,8 @@ h2 {
 Porque después de una larga caminata, el destino tenía otros planes: encontramos algo mucho más grande de lo que buscábamos. Nos encontramos el uno al otro.
 
 Así comenzó esta historia, una que con el tiempo se volvió duradera e inquebrantable. Hemos aprendido a acompañarnos, a apoyarnos, a sostenernos incluso en los días difíciles, y sobre todo, a amarnos. Porque sí, no han faltado las risas ni tampoco las diferencias, pero entre la comprensión, la comunicación y la confianza, hemos construido un amor que crece y se fortalece día a día.
-
 Hoy, después de años, en nuestro hogar, con dos pequeños grandes amores que se sumaron a esta historia —Chubi 🤍 y Copo ❤️— sentimos que es momento de dar un nuevo paso. Queremos invitar a quienes han sido parte de nuestras vidas a ser testigos de este hermoso capítulo que seguimos escribiendo juntos.
-
 Y como bien saben, esta historia no termina aquí… aún quedan muchas páginas por escribir, muchos sueños por cumplir y muchos paseos con Copito por recorrer.
-
 Gracias por acompañarnos y por ser parte de nuestro camino.
 Con mucho amor,
 nosotros ❤️
@@ -852,37 +857,47 @@ window.addEventListener("scroll", () => {
 
   <h2>Confirmar Asistencia</h2>
 
-  <form class="formulario">
+<form class="formulario" 
+      action="https://formspree.io/f/xlgozgqe" 
+      method="POST"
+      onsubmit="return validarFormulario()">
 
-    <input type="text" placeholder="Tu nombre" required>
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
 
-    <div class="asistencia-opciones">
-      <p>¿Asistirás?</p>
+  <div class="asistencia-opciones">
+    <p>¿Asistirás?</p>
 
-      <label>
-        <input type="radio" name="asistencia" value="si" required>
-        Sí asistiré
-      </label>
+    <label>
+      <input type="radio" name="asistencia" value="si" required>
+      Sí asistiré
+    </label>
 
-      <label>
-        <input type="radio" name="asistencia" value="no">
-        No podré asistir
-      </label>
+    <label>
+      <input type="radio" name="asistencia" value="no">
+      No podré asistir
+    </label>
 
-      <label>
-        <input type="radio" name="asistencia" value="confirmar">
-        Por confirmar
-      </label>
-    </div>
+    <label>
+      <input type="radio" name="asistencia" value="confirmar">
+      Por confirmar
+    </label>
+  </div>
+
   <p id="error-asistencia" style="color:red; display:none;">
     Por favor selecciona una opción de asistencia
   </p>
-    <button type="submit">Enviar Confirmación</button>
+
+  <button type="submit">Enviar Confirmación</button>
+  <p id="error-asistencia" style="color:red; display:none;">
+    Por favor selecciona una opción de asistencia
+  </p>
+</form>
+
 
   </form>
 </div>
 
-<a class="whatsapp-btn" href="https://wa.me/56912345678?text=Hola!%20😊%Javier%20y%20Yari%20Quisiera%20recibir%20la%20ubicación%20del%20matrimonio%20o%20hacer%20una%20consulta💍%0AGracias!" target="_blank">
+<a class="whatsapp-btn" href="https://wa.me/56988209644?text=Hola!%20😊%Javier%20y%20Yari%20Quisiera%20recibir%20la%20ubicación%20del%20matrimonio%20o%20hacer%20una%20consulta💍%0AGracias!" target="_blank">
    
    💬 Contáctanos para recibir la ubicación del lugar
 </a>
