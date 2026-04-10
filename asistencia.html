@@ -5,8 +5,186 @@
 <title>Nuestro Matrimonio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
+.section-fondo {
+  background-image: url("17.jpeg");
+  background-size: cover;        /* 👈 cubre todo */
+  background-position: center;   /* 👈 centra */
+  background-repeat: no-repeat;
+
+  width: 100%;
+  min-height: 500px;             /* 👈 altura base */
+    font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.section-fondo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); /* 👈 oscurece */
+}
+
+.section-fondo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2); /* 👈 oscurece */
+}
+
+.section-split {
+  display: flex;
+  align-items: flex-start; /* 👈 clave */
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 2000px;
+  margin: 60px auto;
+  
+}
+
+/* TEXTO */
+.section-texto {
+  width: 60%;
+  text-align: left;
+}
+
+/* IMÁGENES */
+.section-imgs {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-imgs img {
+  width: 110%;
+  height: 550px; /* 👈 más alto y para cambiar tamaño imagen */
+  object-fit: cover;
+  border-radius: 1px;
+
+}
+
+/* 🔥 MUY IMPORTANTE: evitar que bajen */
+.section-texto {
+      gap: 10px;
+  padding-top: 320px;
+
+}
+
+
+.section-imgs {
+  flex-shrink: 0;
+      gap: 10px;
+
+}
+
+.section-imgs img:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-split {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-split.reverse {
+    flex-direction: column;
+  }
+
+  .section-imgs {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .section-imgs img {
+    width: 30%;
+    height: 100px;
+  }
+}
+.section2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: 40px auto;
+
+}
+
+
+
+.section2 img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+    .formulario {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario input[type="text"] {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.asistencia-opciones {
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.asistencia-opciones p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.asistencia-opciones label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.asistencia-opciones label:hover {
+  color: #d4af37;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #d4af37;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
 .regalos {
   text-align: center;
   max-width: 800px;
@@ -177,13 +355,14 @@ body {
 /* HERO */
 
 .mensaje-boda {
-  margin-top: 30px;
+  margin-top: 60px;
   font-size: 20px;
+    font-family: 'Great Vibes', cursive;
+
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
   color: white;
   opacity: 0.9;
-
   animation: flotar 3s ease-in-out infinite;
 }
 
@@ -193,13 +372,14 @@ body {
   100% { transform: translateY(0px); }
 }
 .hero {
-  min-height: 220vh; /* 👈 MÁS ESPACIO */
+  min-height: 140vh; /* 👈 MÁS ESPACIO */
+    font-family: 'Great Vibes', cursive;
+
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('5.jpeg');
+              url('11.jpeg');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,13 +389,13 @@ body {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 60px;
+  font-size: 110px;
   color: #d4af37;
   margin: 0;
 }
 
 .hero p {
-  font-size: 20px;
+  font-size: 50px;
 }
 
 /* CONTADOR */
@@ -279,11 +459,14 @@ body {
 .section {
   padding: 60px 20px;
   text-align: center;
+  
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   color: #d4af37;
+    font-size: 35px;
+
 }
 
 
@@ -331,6 +514,7 @@ h2 {
   transform: scale(1.05);
   background: #e6c75a;
 }
+
 </style>
 </head>
 
@@ -339,14 +523,12 @@ h2 {
 <div class="fade-transition active" id="fade"></div>
 <!-- HERO -->
 <div class="hero">
-      <h1>HA DICHO QUE SÍ!</h1>
+      <h1>¡HA DICHO QUE SÍ!</h1>
 <div class="logo-container">
   <video autoplay muted loop playsinline class="logo-video">
     <source src="logo.mp4" type="video/mp4">
   </video>
 </div>
-  <p>26 de Septiembre · 18:00 hrs</p>
-
   <!-- CONTADOR -->
   <div class="countdown">
     <div class="time-box"><span id="days">0</span><p>Días</p></div>
@@ -356,9 +538,38 @@ h2 {
   </div>
 
   <p class="mensaje-boda">
-  Te esperamos<br>
+  Nos encantaría verte en el día más importante de nuestras vidas<br>
   Será un día inolvidable y queremos compartirlo contigo 💍
 </p>
+</div>
+
+
+<div class="section">
+  <div class="section-split reverse">
+        <div class="section-imgs">
+      <img src="15.jpeg">
+      <img src="16.jpeg">
+    </div>
+        <div class="section-texto">
+
+  <h2>Nuestra Historia</h2>
+  <p>
+    Ella faltó a una de sus clases de vóley, esas que tanto le gustaban. Él, rodeado de su grupo de amigos, mostrando esa mezcla de estilo y rudeza que lo caracterizaba. Ambos salieron ese día buscando una tocata de hip-hop… una que nunca encontrarían.
+
+Porque después de una larga caminata, el destino tenía otros planes: encontramos algo mucho más grande de lo que buscábamos. Nos encontramos el uno al otro.
+
+Así comenzó esta historia, una que con el tiempo se volvió duradera e inquebrantable. Hemos aprendido a acompañarnos, a apoyarnos, a sostenernos incluso en los días difíciles, y sobre todo, a amarnos. Porque sí, no han faltado las risas ni tampoco las diferencias, pero entre la comprensión, la comunicación y la confianza, hemos construido un amor que crece y se fortalece día a día.
+
+Hoy, después de años, en nuestro hogar, con dos pequeños grandes amores que se sumaron a esta historia —Chubi 🤍 y Copo ❤️— sentimos que es momento de dar un nuevo paso. Queremos invitar a quienes han sido parte de nuestras vidas a ser testigos de este hermoso capítulo que seguimos escribiendo juntos.
+
+Y como bien saben, esta historia no termina aquí… aún quedan muchas páginas por escribir, muchos sueños por cumplir y muchos paseos con Copito por recorrer.
+
+Gracias por acompañarnos y por ser parte de nuestro camino.
+Con mucho amor,
+nosotros ❤️
+  </p>
+  </div>
+
 </div>
 
 <!-- GALERIA -->
@@ -370,36 +581,49 @@ h2 {
   <img src="5.jpeg">
   <img src="6.jpeg">
   <img src="7.jpeg">
-</div>
-<div class="section">
-  <h2>Nuestra Historia</h2>
-  <p>
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar 
-    todo lo que vendría después. Con el tiempo, construimos una historia llena 
-    de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso 
-    y celebrarlo junto a ustedes Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes 💖
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
+    <img src="8.jpeg">
+      <img src="13.jpeg">
+        <img src="10.jpeg">
+          <img src="11.jpeg">
+                    <img src="12.jpeg">
 
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-    Entre coincidencias y destino, nuestros caminos se cruzaron sin imaginar todo lo que vendría después. Con el tiempo, construimos una historia llena de amor, risas y sueños compartidos. Hoy queremos dar el siguiente paso y celebrarlo junto a ustedes
-
-  </p>
 </div>
 <!-- SECCION -->
+
+<div class="section-fondo">
+  <div class="contenido">
+  <h2>Lo que viviremos juntos</h2>
+  <p>
+    Hemos preparado una celebración llena de momentos especiales ✨  
+    Habrá sorpresas, juegos, música y mucha alegría.  
+    Queremos que disfrutes cada instante con nosotros 💃🕺
+  </p>
+</div>
+</div>
+<div class="section">
+  <h2>Programa del Evento</h2>
+
+  <div class="program-grid">
+
+    <div class="card"><span>18:00</span><h4>Recepción</h4></div>
+
+    <div class="card"><span>18:30</span><h4>Ceremonia</h4></div>
+
+    <div class="card"><span>19:00</span><h4>Cóctel & Brindis</h4></div>
+
+    <div class="card"><span>19:45</span><h4>Fotografías</h4></div>
+
+    <div class="card"><span>20:00</span><h4>Cena</h4></div>
+
+    <div class="card"><span>22:00</span><h4>Fiesta & Bar</h4></div>
+
+    <div class="card"><span>00:00</span><h4>Estación nocturna</h4></div>
+
+    <div class="card"><span>02:00</span><h4>Fin del evento</h4></div>
+  </div>
+</div>
+</div>
+
 <div class="section">
   <h2>Menú</h2>
 
@@ -411,27 +635,10 @@ h2 {
 
       <div>
         <h4>Bebidas</h4>
-        <ul>
-          <li>Pisco Sour</li>
-          <li>Mango Sour</li>
-          <li>Espumante (Brut, Demi Sec, Moscato)</li>
-          <li>Aperol Spritz</li>
-          <li>Gin Tonic</li>
-          <li>Jugos Minuto Verde / Guallarauco</li>
-          <li>Bebidas Light y Normal</li>
-          <li>Agua mineral con y sin gas</li>
-        </ul>
       </div>
 
       <div>
         <h4>Bocados</h4>
-        <ul>
-          <li>Bruschetta (jamón serrano, Philadelphia, camarón, palmitos)</li>
-          <li>Brocheta de vacuno grillado</li>
-          <li>Brocheta de ave con maracuyá</li>
-          <li>Cucharita de ceviche</li>
-          <li>Empanaditas (carne, espinaca, camarón, champiñón, queso)</li>
-        </ul>
       </div>
 
     </div>
@@ -444,24 +651,27 @@ h2 {
     <div class="menu-grid">
       <div>
         <ul>
-          <li>Brocheta Mediterránea (queso de cabra y tomate cherry)</li>
-          <li>Camarones crocantes</li>
-          <li>Mini taquito mexicano</li>
-        </ul>
+.Pastelera de choclo aromatizada
+en albahaca.
+2.Verduras Salteadas. 
+3.Papas rústicas.
+4.Puré verde con pasta de
+espinaca.
+5.Arroz Árabe.
       </div>
     </div>
   </div>
 
   <!-- 🍽 ENTRADAS -->
   <div class="menu-block">
-    <h3>🍽 Platos de Entrada (en evaluación)</h3>
+    <h3>🍽 Platos 3 tiempos (en evaluación)</h3>
 
     <div class="menu-grid">
       <div>
         <ul>
-          <li>Trilogía de causas peruanas (pollo, camarón, salmón)</li>
-          <li>Ceviche mixto del Pacífico</li>
-          <li>Timbal de pollo y palta</li>
+          <li>Entrada</li>
+          <li>Plato Principal - Guarniciones</li>
+          <li>🍰 Buffet de Postres</li>
         </ul>
       </div>
     </div>
@@ -483,45 +693,7 @@ h2 {
     </div>
   </div>
 
-  <!-- 🍚 ACOMPAÑAMIENTOS -->
-  <div class="menu-block">
-    <h3>🍚 Acompañamientos</h3>
 
-    <div class="menu-grid">
-      <div>
-        <ul>
-          <li>Pastelera de choclo con albahaca</li>
-          <li>Verduras salteadas al wok</li>
-          <li>Papas rústicas</li>
-          <li>Papa gratinada</li>
-          <li>Puré rústico</li>
-          <li>Arroz árabe</li>
-          <li>Mix de hojas verdes</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- 🍰 POSTRES -->
-  <div class="menu-block">
-    <h3>🍰 Buffet de Postres</h3>
-
-    <div class="menu-grid">
-      <div>
-        <ul>
-          <li>Tiramisú</li>
-          <li>Shots de 4 leches</li>
-          <li>Pie de limón brûlée</li>
-          <li>Mousse de chocolate</li>
-          <li>Mousse de frambuesa</li>
-          <li>Passion fruit</li>
-          <li>Cookies & Cream</li>
-          <li>Cheesecake frutos del bosque</li>
-          <li>Frutas de estación</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
   <!-- 🍾 FIESTA -->
   <div class="menu-block">
@@ -531,39 +703,21 @@ h2 {
 
       <div>
         <h4>Bebidas</h4>
-        <ul>
-          <li>Coca-Cola, Fanta, Sprite</li>
-          <li>Jugos Del Valle</li>
-          <li>Agua mineral Vital / Cachantún</li>
-        </ul>
+
       </div>
 
       <div>
         <h4>Destilados</h4>
-        <ul>
-          <li>Pisco Mistral</li>
-          <li>Ron Havana Club</li>
-          <li>Vodka Absolut</li>
-          <li>Whisky Jack Daniel's</li>
-        </ul>
+
       </div>
 
       <div>
         <h4>Mixología</h4>
-        <ul>
-          <li>Daiquirí frambuesa y menta</li>
-          <li>Mojito cubano</li>
-          <li>Piña colada</li>
-          <li>Ramazzotti Spritz</li>
-          <li>Tequila Margarita</li>
-        </ul>
+
       </div>
 
       <div>
-        <h4>Extras</h4>
-        <ul>
-          <li>100 cervezas (Corona / Heineken)</li>
-        </ul>
+        <h4>Cervezas</h4>
       </div>
 
     </div>
@@ -584,42 +738,6 @@ h2 {
     </div>
   </div>
 </div>
-<div class="section">
-  <h2>Lo que viviremos juntos</h2>
-  <p>
-    Hemos preparado una celebración llena de momentos especiales ✨  
-    Habrá sorpresas, juegos, música y mucha alegría.  
-    Queremos que disfrutes cada instante con nosotros 💃🕺
-  </p>
-</div>
-<div class="section">
-  <h2>Programa del Evento</h2>
-
-  <div class="program-grid">
-
-    <div class="card"><span>18:00</span><h4>Recepción</h4><p>Gran Parrón</p></div>
-
-    <div class="card"><span>18:30</span><h4>Ceremonia</h4><p>Ingreso novios · Alfombra roja</p></div>
-
-    <div class="card"><span>19:00</span><h4>Cóctel & Brindis</h4><p>Aire libre</p></div>
-
-    <div class="card"><span>19:45</span><h4>Fotografías</h4></div>
-
-    <div class="card"><span>20:00</span><h4>Cena</h4><p>Piscina iluminada</p></div>
-
-    <div class="card"><span>21:30</span><h4>Corte de torta</h4></div>
-
-    <div class="card"><span>22:00</span><h4>Fiesta & Bar</h4></div>
-
-    <div class="card"><span>00:00</span><h4>Estación nocturna</h4></div>
-
-    <div class="card"><span>02:00</span><h4>Fin del evento</h4></div>
-
-  </div>
-</div>
-</div>
-
-
 
 <div class="section regalos">
   <h2>🎁 Regalos</h2>
@@ -653,6 +771,29 @@ h2 {
 
 <script>
 // 🎵 AUDIO (100% funcional)
+
+function validarFormulario() {
+  const opciones = document.getElementsByName("asistencia");
+  const error = document.getElementById("error-asistencia");
+
+  let seleccionado = false;
+
+  for (let i = 0; i < opciones.length; i++) {
+    if (opciones[i].checked) {
+      seleccionado = true;
+      break;
+    }
+  }
+
+  if (!seleccionado) {
+    error.style.display = "block";
+    return false; // 🚫 NO ENVÍA
+  }
+
+  error.style.display = "none";
+  return true; // ✅ ENVÍA
+}
+
 function activarAudio() {
   const music = document.getElementById("music");
   music.play();
@@ -697,29 +838,53 @@ window.addEventListener("scroll", () => {
     form.style.transform = "translateY(0)";
   }
 });
+
+
 </script>
+<div class="section2">
 
+
+        <img src="10.jpeg">
+          <img src="11.jpeg">
+          </div>
 <div class="section">
+
+
   <h2>Confirmar Asistencia</h2>
-  <p>Por favor confirma tu asistencia a nuestro gran día 💍</p>
 
-  <form action="https://formspree.io/f/xlgozgqe" method="POST" class="formulario">
+  <form class="formulario">
 
-    <input type="text" name="Nombre" placeholder="Tu nombre" required>
+    <input type="text" placeholder="Tu nombre" required>
 
-    <input type="number" name="Acompañantes" placeholder="Cantidad de acompañantes">
+    <div class="asistencia-opciones">
+      <p>¿Asistirás?</p>
 
-    <textarea name="Mensaje" placeholder="Déjanos un mensaje o buenos deseos 💌"></textarea>
+      <label>
+        <input type="radio" name="asistencia" value="si" required>
+        Sí asistiré
+      </label>
 
-    <button type="submit">Confirmar asistencia</button>
+      <label>
+        <input type="radio" name="asistencia" value="no">
+        No podré asistir
+      </label>
+
+      <label>
+        <input type="radio" name="asistencia" value="confirmar">
+        Por confirmar
+      </label>
+    </div>
+  <p id="error-asistencia" style="color:red; display:none;">
+    Por favor selecciona una opción de asistencia
+  </p>
+    <button type="submit">Enviar Confirmación</button>
 
   </form>
 </div>
 
-<a href="https://wa.me/56988209644"
-   target="_blank"
-   class="whatsapp-btn">
-   💬 Contáctanos por WhatsApp para recibir la ubicación del lugar
+<a class="whatsapp-btn" href="https://wa.me/56912345678?text=Hola!%20😊%Javier%20y%20Yari%20Quisiera%20recibir%20la%20ubicación%20del%20matrimonio%20o%20hacer%20una%20consulta💍%0AGracias!" target="_blank">
+   
+   💬 Contáctanos para recibir la ubicación del lugar
 </a>
 </body>
 </html>
